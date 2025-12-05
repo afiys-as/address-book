@@ -19,7 +19,6 @@
         </div>
         <div class="flex items-center space-x-2">
             <input type="text" id="searchInput" placeholder="Search..." class="border px-3 py-1 rounded">
-            <button class="border px-3 py-1 rounded" id="filterBtn">Filter</button>
         </div>
     </div>
 
@@ -27,7 +26,9 @@
         <table class="min-w-full border">
             <thead>
                 <tr class="border-b">
-                    <th class="p-2 text-left"><input type="checkbox" id="selectAll" onchange="selectAllContacts()"></th>
+                    <th class="p-2 text-left">
+                        <input type="checkbox" id="selectAll" onclick="toggleSelectAll(this)">
+                    </th>
                     <th class="p-2 text-left">Name</th>
                     <th class="p-2 text-left">Email</th>
                     <th class="p-2 text-left">Phone Number</th>
@@ -44,10 +45,11 @@
         </table>
     </div>
 
-    <!-- Modal for Add Contact -->
+    <!-- Modal -->
     <div id="modal" class="hidden fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center">
-        <div class="bg-white p-6 rounded-md">
-            <h2 class="text-lg font-semibold mb-4">Add New Contact</h2>
+        <div class="bg-white p-6 rounded-md w-96">
+            <h2 class="text-lg font-semibold mb-4" id="modalTitle">Add New Contact</h2>
+
             <form id="addContactForm">
                 <div class="mb-4">
                     <label class="block text-sm">Name</label>
@@ -65,8 +67,15 @@
                     <label class="block text-sm">Location</label>
                     <input type="text" id="location" class="border p-2 w-full">
                 </div>
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Add Contact</button>
-                <button type="button" onclick="closeModal()" class="ml-4 bg-red-500 text-white px-4 py-2 rounded">Cancel</button>
+
+                <div class="flex justify-end space-x-2">
+                    <button type="submit" id="submitBtn" class="bg-blue-500 text-white px-4 py-2 rounded">
+                        Add Contact
+                    </button>
+                    <button type="button" onclick="closeModal()" class="bg-red-500 text-white px-4 py-2 rounded">
+                        Cancel
+                    </button>
+                </div>
             </form>
         </div>
     </div>

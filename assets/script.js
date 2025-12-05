@@ -1,6 +1,6 @@
 const dataContacts = [
-  { id: 1, fullName: "Mochamad Irvan", phone: "62881080070700", email: "mchmdirvan@example.com", location: "Jakarta" },
-  { id: 2, fullName: "Adhitya Sofyan", phone: "62881080080800", email: "adhitya@example.com", location: "Bandung" }
+  { id: 1, fullName: "Haechan", phone: "62881080070700", email: "Hechan@example.com", location: "Bandung" },
+  { id: 2, fullName: "keonho", phone: "62881080080800", email: "keonho@example.com", location: "Jakarta" }
 ];
 
 function displayContacts() {
